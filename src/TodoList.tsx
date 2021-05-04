@@ -39,8 +39,8 @@ export default function TodoList() {
                     {todos.map((todo: { id: React.Key | null | undefined; isCompleted: any; text: any }) => {
                         return (
                             <div key={todo.id} className="py-1 text-sm">
-                                <div className="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-1 py-1 my-1">
-                                    <input className="pointer mt-2 form-checkbox h-5 w-5 text-gray-600"
+                                <div className="flex justify-start text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-1 py-1 my-1">
+                                    <input className="pointer mt-2 cursor-pointer form-checkbox h-5 w-5 text-gray-600"
                                         type="checkbox"
                                         checked={
                                             !todo.isCompleted
