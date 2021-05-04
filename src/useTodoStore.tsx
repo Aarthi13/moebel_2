@@ -31,9 +31,7 @@ export const useTodoStore = create((set) => ({
             isCompleted: !isDone
           };
         }
-      
         return todo;
-  
       })
     }))
 
