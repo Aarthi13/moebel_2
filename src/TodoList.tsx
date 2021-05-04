@@ -17,12 +17,6 @@ export default function TodoList() {
         setTodoValue("");
     };
 
-    const Checkbox = (props: any) => (
-    <input type="checkbox" {...props} />)
-
-    const handleCheck = (e:any) => {
-      
-    }
 
     return (
         <>
@@ -40,28 +34,33 @@ export default function TodoList() {
                 </div>
             </form>
 
-
             <nav className="p-4">
                 <ul className="space-x-2">
                     {todos.map((todo: { id: React.Key | null | undefined; isCompleted: any; text: any }) => {
                         return (
-                            <div  key={todo.id} className="py-1 text-sm">
+                            <div key={todo.id} className="py-1 text-sm">
                                 <div className="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-1 py-1 my-1">
-
-                                    <Checkbox className="pointer mt-2 form-checkbox h-5 w-5 text-gray-600" checked={todo.isCompleted}  onChange={handleCheck} onClick={() => completeTodo(todo.id)}></Checkbox>
+                                    <input className="pointer mt-2 form-checkbox h-5 w-5 text-gray-600"
+                                        type="checkbox"
+                                        checked={
+                                            !todo.isCompleted
+                                                ? (todo.isCompleted = true)
+                                                : (todo.isCompleted = false)
+                                        }
+                                        onChange={() => completeTodo(todo.id, todo.isCompleted)}
+                                    />
 
                                     <div className="flex-grow font-medium px-2 flex place-content-center text-xl">
                                         <div className="font-bold" style={{ textDecoration: todo.isCompleted ? "line-through" : "unset" }}>
-                                            {todo.text}{" "}
+                                            {" "} {todo.text}{" "}
                                         </div>
                                     </div>
-
                                     <div className="text-sm font-normal text-gray-500 tracking-wide">
                                         <button className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded" onClick={() => deleteTodo(todo.id)}>  X </button>
                                     </div>
-                                    
+
                                 </div>
-                                
+
 
                             </div>
                         );

@@ -21,18 +21,20 @@ export const useTodoStore = create((set) => ({
       todos: state.todos.filter((todo: { id: any; }) => todo.id !== todoId)
     })),
 
-  completeTodo: (todoId: any) =>
+  completeTodo: (todoId: any,isDone:boolean) =>
     set((state:any) => ({
       todos: state.todos.map((todo: { id: any; }) => {
         if (todo.id === todoId) {
+          
           return {
             ...todo,
-            isCompleted: true
+            isCompleted: !isDone
           };
         }
-        
+      
         return todo;
   
       })
     }))
+
 }));
