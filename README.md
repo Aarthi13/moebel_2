@@ -51,12 +51,12 @@ https://tailwindcss.com/docs/guides/create-react-app
 
 Configure tailwind in react  - by author
 
-to use tailwind change the script section in package.json
-add new file crack.config.js
-to make tailwind to support install autoprefixer,postcss <8,and tailwind
-add 
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-in index.css
-use same index.css in index.tsx
+			to use tailwind change the script section in package.json
+			add new file crack.config.js
+			to make tailwind to support install autoprefixer,postcss <8,and tailwind
+			add 
+				@tailwind base;
+				@tailwind components;
+				@tailwind utilities;
+			in index.css
+			use same index.css in index.tsx
