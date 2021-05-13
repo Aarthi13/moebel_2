@@ -1,6 +1,7 @@
 
-import React from "react"
+
 import TodoList from "./TodoList";
+import SearchComponent from './SearchComponent';
 import './index.css';
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
             </div>
             <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
               <TodoList />
+            </div>
+            <div>
+              <SearchComponent/>
             </div>
           </div>
         </div>
